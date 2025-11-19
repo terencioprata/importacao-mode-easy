@@ -1,11 +1,548 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>teste</title>
+    <title>Importação Mode Easy - Transforme Seu Futuro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #0a0a0a;
+            --green: #1a4d2e;
+            --yellow: #ffd700;
+            --green-light: #2d7a4f;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, var(--black) 0%, var(--green) 100%);
+            color: #ffffff;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, var(--yellow), var(--green-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 10px var(--yellow));
+            }
+            to {
+                filter: drop-shadow(0 0 20px var(--yellow));
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--yellow);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #e0e0e0;
+            font-style: italic;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Video Container */
+        .video-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.3);
+            animation: fadeIn 1s ease 0.6s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: var(--black);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, var(--yellow), #ffed4e);
+            color: var(--black);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Content Section */
+        .content-section {
+            background: rgba(26, 77, 46, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 80px 60px;
+            margin: 60px 0;
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--yellow);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--yellow), transparent);
+        }
+
+        .content-text {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-bottom: 30px;
+            text-align: justify;
+            color: #e8e8e8;
+        }
+
+        .content-text strong {
+            color: var(--yellow);
+            font-weight: bold;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, rgba(26, 77, 46, 0.5), rgba(45, 122, 79, 0.3));
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .benefit-card:hover::before {
+            opacity: 1;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--yellow);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .benefit-title {
+            font-size: 1.5rem;
+            color: var(--yellow);
+            margin-bottom: 15px;
+        }
+
+        .benefit-description {
+            font-size: 1.1rem;
+            color: #d0d0d0;
+            line-height: 1.6;
+        }
+
+        /* Founders Section */
+        .founders-section {
+            background: linear-gradient(135deg, var(--black), var(--green));
+            padding: 80px 60px;
+            border-radius: 30px;
+            margin: 60px 0;
+            border: 2px solid var(--yellow);
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .founder-card {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .founder-card:hover {
+            border-color: var(--yellow);
+            transform: scale(1.05);
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        .founder-name {
+            font-size: 1.8rem;
+            color: var(--yellow);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .founder-role {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, var(--green-light), var(--green));
+            color: var(--yellow);
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .social-link:hover {
+            background: var(--yellow);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--black);
+            margin-top: 80px;
+            border-top: 3px solid var(--yellow);
+        }
+
+        .footer-text {
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .content-section,
+            .founders-section {
+                padding: 40px 30px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .content-text {
+                font-size: 1.1rem;
+            }
+
+            .cta-button {
+                padding: 15px 35px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>Olá mundo</p>
+    <header>
+        <div class="container">
+            <h1 class="logo">Importação Mode Easy</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2 class="hero-title">Domine a Arte da Importação e Transforme Seu Futuro Financeiro</h2>
+                <p class="hero-subtitle">Aprenda com quem já trilhou o caminho e construa um negócio lucrativo em Angola</p>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="container">
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/rJuf4QU7_CA?autoplay=1&mute=1&controls=1&modestbranding=1&rel=0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <div class="container">
+                <a href="https://chat.whatsapp.com/DzPZRihsHGGH36hYAfBnYK" target="_blank" class="cta-button">
+                    🚀 Juntar-me ao Grupo VIP
+                </a>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <div class="container">
+                <h2 class="section-title">Sobre o Projecto Importação Mode Easy</h2>
+                
+                <p class="content-text">
+                    O <strong>Importação Mode Easy</strong> nasceu da experiência consolidada de três empreendedores digitais angolanos que compreenderam as complexidades e oportunidades do mercado de importação em Angola. Terêncio Prata, Alberto Selundo e Osvaldo Feca uniram suas expertises em marketing digital, gestão de mídias sociais e importação regular para criar um programa educacional completo e acessível.
+                </p>
+
+                <p class="content-text">
+                    Ao longo de anos operando no mercado angolano, identificamos as principais dificuldades enfrentadas por quem deseja iniciar ou expandir suas operações de importação: <strong>falta de conhecimento técnico, ausência de contactos confiáveis com fornecedores, desconhecimento dos trâmites legais e receio de cometer erros dispendiosos</strong>. O nosso projecto foi meticulosamente desenvolvido para eliminar essas barreiras.
+                </p>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🎥</span>
+                        <h3 class="benefit-title">Vídeo-Aulas Completas</h3>
+                        <p class="benefit-description">Conteúdo audiovisual detalhado que aborda desde os fundamentos até estratégias avançadas de importação, permitindo aprendizado no seu próprio ritmo.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <span class="benefit-icon">📚</span>
+                        <h3 class="benefit-title">E-book Exclusivo</h3>
+                        <p class="benefit-description">Material de apoio completo para consulta permanente, com processos documentados, checklists e guias práticos para cada etapa da importação.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <span class="benefit-icon">🤝</span>
+                        <h3 class="benefit-title">Rede de Fornecedores</h3>
+                        <p class="benefit-description">Acesso aos contactos de fornecedores testados e aprovados pela nossa equipa, economizando meses de pesquisa e reduzindo riscos comerciais.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <span class="benefit-icon">💼</span>
+                        <h3 class="benefit-title">Acompanhamento Contínuo</h3>
+                        <p class="benefit-description">Suporte directo da nossa equipa até que você realize com sucesso suas primeiras importações, garantindo segurança e confiança em cada passo.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <span class="benefit-icon">📊</span>
+                        <h3 class="benefit-title">Estratégias de Mercado</h3>
+                        <p class="benefit-description">Análise de tendências, identificação de produtos lucrativos e técnicas de precificação adaptadas à realidade do mercado angolano.</p>
+                    </div>
+
+                    <div class="benefit-card">
+                        <span class="benefit-icon">⚖️</span>
+                        <h3 class="benefit-title">Orientação Legal</h3>
+                        <p class="benefit-description">Informações actualizadas sobre regulamentações aduaneiras, documentação necessária e conformidade com as leis de importação em Angola.</p>
+                    </div>
+                </div>
+
+                <p class="content-text">
+                    O nosso compromisso transcende a simples transmissão de conhecimento. Queremos construir uma <strong>comunidade de importadores bem-sucedidos</strong> que compartilham experiências, superam desafios em conjunto e prosperam no mercado angolano. Cada membro do Importação Mode Easy terá acesso permanente ao nosso grupo exclusivo, onde poderá esclarecer dúvidas, compartilhar vitórias e receber orientações personalizadas da nossa equipa.
+                </p>
+
+                <p class="content-text">
+                    Investir no Importação Mode Easy é investir no seu futuro empresarial. Seja você um profissional que deseja criar uma fonte adicional de renda, um empreendedor que busca expandir seu negócio ou alguém que deseja iniciar uma carreira independente, este programa oferece todos os recursos necessários para transformar importação em uma actividade <strong>lucrativa, sustentável e escalável</strong>.
+                </p>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <div class="container">
+                <a href="https://chat.whatsapp.com/DzPZRihsHGGH36hYAfBnYK" target="_blank" class="cta-button">
+                    💎 Garantir Minha Vaga no Grupo VIP
+                </a>
+            </div>
+        </div>
+
+        <section class="founders-section">
+            <div class="container">
+                <h2 class="section-title">Conheça os Fundadores</h2>
+                
+                <div class="founders-grid">
+                    <div class="founder-card">
+                        <h3 class="founder-name">Terêncio Prata</h3>
+                        <p class="founder-role">Empreendedor Digital & Especialista em Marketing</p>
+                        <a href="https://www.facebook.com/terencioprataoficial" target="_blank" class="social-link">
+                            📘 Conectar no Facebook
+                        </a>
+                    </div>
+
+                    <div class="founder-card">
+                        <h3 class="founder-name">Alberto Selundo</h3>
+                        <p class="founder-role">Gestor de Mídias Sociais & Estrategista Digital</p>
+                        <a href="https://www.facebook.com/profile.php?id=61574238503131" target="_blank" class="social-link">
+                            📘 Conectar no Facebook
+                        </a>
+                    </div>
+
+                    <div class="founder-card">
+                        <h3 class="founder-name">Osvaldo Feca</h3>
+                        <p class="founder-role">Importador Regular & Consultor de Negócios</p>
+                        <a href="https://www.facebook.com/osvaldo.pascoal.378" target="_blank" class="social-link">
+                            📘 Conectar no Facebook
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2024 Importação Mode Easy. Todos os direitos reservados.</p>
+            <p class="footer-text">Desenvolvido por Terêncio Prata, Alberto Selundo e Osvaldo Feca</p>
+        </div>
+    </footer>
 </body>
 </html>
